@@ -2,7 +2,7 @@
 Yet another Movie Data Capture tool
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/mdc-ng/mdc-ng?label=mdc-ng)](https://github.com/mdc-ng/mdc-ng/releases)
-![Docker Pulls](https://img.shields.io/docker/pulls/mdcng/mdc?color=orange&link=https%3A%2F%2Fhub.docker.com%2Fr%2Fmdcng%2Fmdc)
+[![Docker Pulls](https://img.shields.io/docker/pulls/mdcng/mdc?color=orange)](https://hub.docker.com/r/mdcng/mdc/tags)
 
 ## Features
 - [x] 高性能、高质量刮削器，多种刮削源与整理方式
