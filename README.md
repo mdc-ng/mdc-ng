@@ -7,11 +7,12 @@ Yet another Movie Data Capture tool
 Telegram发布频道：https://t.me/mdc_ng
 
 ## Features
+- [x] WebUI交互界面
 - [x] 高性能、高质量刮削器，多种刮削源与整理方式
 - [x] 支持多目录监控，检测到新文件自动刮削入库
 - [x] 手动存量整理
 - [x] 联动Emby演员信息、图片刮削
-- [x] 图片自动添加标签、多引擎文本翻译、内置演员数据库、sehuatang标题数据库等等细节功能
+- [x] 图片自动添加标签、多引擎文本翻译、内置演员数据库、sehuatang标题数据库等等
 
 ## 介绍
 ### 一、视频刮削整理
