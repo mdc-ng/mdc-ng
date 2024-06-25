@@ -5,6 +5,8 @@ Yet another Movie Data Capture tool
 [![Docker Pulls](https://img.shields.io/docker/pulls/mdcng/mdc?color=orange)](https://hub.docker.com/r/mdcng/mdc/tags)
 
 Telegram发布频道：https://t.me/mdc_ng
+> [!WARNING]
+> **本项目处于开发阶段，保持高频率的功能更新，使用遇到问题请提交Issue或加入TG讨论组**
 
 ## Features
 - [x] WebUI交互界面
