@@ -39,7 +39,7 @@ Telegram发布频道：https://t.me/mdc_ng
    
 当你的媒体目录是本地盘时，优先使用性能模式来获得最佳体验。其他情况或遇到目录监控不工作，请改成兼容模式
 
-### 二、演员刮削
+### 三、演员刮削
 1. 目前支持emby服务端刮削
 2. 刮削信息源：维基百科
 3. 刮削图片源：[graphis](graphis.ne.jp)，[gfriends](https://github.com/gfriends/gfriends)；其中graphis源的图片质量优秀并且有背景图，作为首选
