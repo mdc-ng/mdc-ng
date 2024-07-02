@@ -46,6 +46,9 @@ Telegram发布频道：https://t.me/mdc_ng
 
 ## 安装
 镜像版本可以去本项目[dockerhub页面](https://hub.docker.com/r/mdcng/mdc)查看
+
+容器默认PUID, PGID为1000，刮削遇到`Permission denied`等权限问题按需调整
+
 ### docker-compose（推荐）
 ```yaml
 ---
@@ -54,6 +57,9 @@ services:
   mdc:
     image: mdcng/mdc:latest
     container_name: mdc
+    environment:
+      - PUID=1000
+      - PGID=1000
     volumes:
       - /path/to/data:/config # 配置目录，必须
       - /path/to/media:/media # 媒体库，可映射多个
@@ -66,6 +72,8 @@ services:
 docker run -d \
   --name=mdc \
   -p 9208:9208 \
+  -e PUID=1000 \
+  -e PGID=1000 \
   -v /path/to/data:/config \
   -v /path/to/media:/media  \
   --restart unless-stopped \
