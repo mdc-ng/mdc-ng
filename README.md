@@ -51,7 +51,6 @@ Telegram发布频道：https://t.me/mdc_ng
 
 ### docker-compose（推荐）
 ```yaml
----
 version: "2.1"
 services:
   mdc:
@@ -60,6 +59,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
+      - TZ=Asia/Shanghai
     volumes:
       - /path/to/data:/config # 配置目录，必须
       - /path/to/media:/media # 媒体库，可映射多个
@@ -74,6 +74,7 @@ docker run -d \
   -p 9208:9208 \
   -e PUID=1000 \
   -e PGID=1000 \
+  -e TZ=Asia/Shanghai \
   -v /path/to/data:/config \
   -v /path/to/media:/media  \
   --restart unless-stopped \
