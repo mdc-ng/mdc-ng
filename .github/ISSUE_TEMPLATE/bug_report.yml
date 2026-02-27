@@ -7,6 +7,14 @@ body:
       value: |
         感谢你提交 Bug 报告！请尽量填写以下信息，帮助我们更快定位和修复问题。
 
+  - type: checkboxes
+    id: duplicate
+    attributes:
+      label: 重复检查
+      options:
+        - label: "我已经搜索过现有 Issue，确认没有重复"
+          required: true
+
   - type: input
     id: version
     attributes:

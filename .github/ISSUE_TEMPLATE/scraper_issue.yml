@@ -7,6 +7,14 @@ body:
       value: |
         请提供尽可能详细的刮削信息，帮助我们快速定位问题。
 
+  - type: checkboxes
+    id: duplicate
+    attributes:
+      label: 重复检查
+      options:
+        - label: "我已经搜索过现有 Issue，确认没有重复"
+          required: true
+
   - type: input
     id: version
     attributes:

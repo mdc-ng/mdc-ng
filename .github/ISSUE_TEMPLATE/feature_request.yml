@@ -7,6 +7,14 @@ body:
       value: |
         感谢你的建议！请描述你希望的功能以及使用场景。
 
+  - type: checkboxes
+    id: duplicate
+    attributes:
+      label: 重复检查
+      options:
+        - label: "我已经搜索过现有 Issue，确认没有重复"
+          required: true
+
   - type: textarea
     id: description
     attributes:
