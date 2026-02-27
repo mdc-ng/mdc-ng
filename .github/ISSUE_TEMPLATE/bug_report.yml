@@ -30,7 +30,6 @@ body:
       label: 部署方式
       options:
         - Docker
-        - Docker Compose
         - 群晖 (Synology)
         - 极空间 (ZSpace)
         - 威联通 (QNAP)
