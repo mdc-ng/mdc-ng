@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "\U0001F4AC 使用咨询 / 问题讨论"
+    url: https://t.me/mdc_ng
+    about: "使用问题、配置咨询请到 Telegram 群组讨论"

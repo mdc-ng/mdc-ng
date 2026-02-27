@@ -1,0 +1,78 @@
+name: "\U0001F41B Bug 报告"
+description: "报告一个问题或错误"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你提交 Bug 报告！请尽量填写以下信息，帮助我们更快定位和修复问题。
+
+  - type: input
+    id: version
+    attributes:
+      label: MDC-NG 版本
+      description: "可在 Web 界面底部或 Docker 镜像 tag 中查看"
+      placeholder: "例如：v1.2.3"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: deploy
+    attributes:
+      label: 部署方式
+      options:
+        - Docker
+        - Docker Compose
+        - 群晖 (Synology)
+        - 极空间 (ZSpace)
+        - 威联通 (QNAP)
+        - 绿联 (UGREEN)
+        - 其他 NAS
+        - 直接运行
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: "清晰描述你遇到了什么问题"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: "如何稳定触发这个问题？"
+      placeholder: |
+        1. 进入 '...'
+        2. 点击 '...'
+        3. 出现错误
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期行为
+      description: "你期望发生什么？"
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 相关日志
+      description: "粘贴相关的错误日志或截图（可从任务详情页获取日志）"
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: 补充信息
+      description: "任何可能有帮助的额外信息（配置、截图等）"
+    validations:
+      required: false

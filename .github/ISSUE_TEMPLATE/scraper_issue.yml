@@ -1,0 +1,73 @@
+name: "\U0001F3AC 刮削问题"
+description: "刮削结果异常、数据源报错或元数据不正确"
+labels: ["scraper"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请提供尽可能详细的刮削信息，帮助我们快速定位问题。
+
+  - type: input
+    id: version
+    attributes:
+      label: MDC-NG 版本
+      placeholder: "例如：v1.2.3"
+    validations:
+      required: true
+
+  - type: input
+    id: video_id
+    attributes:
+      label: 番号
+      description: "出问题的影片番号"
+      placeholder: "例如：ABC-123"
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: 数据源
+      description: "出问题的刮削源（如不确定可留空）"
+      placeholder: "例如：JavBus、JavDB、DMM、FC2 等"
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: "描述刮削结果哪里不对"
+      placeholder: |
+        例如：
+        - 标题抓取为英文，预期应该是日文
+        - 演员信息缺失
+        - 封面图片下载失败
+        - 番号识别错误，多了 cd1
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期的正确结果
+      description: "正确的元数据应该是什么？可以附上数据源网页链接"
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 刮削日志
+      description: "从任务详情页复制刮削日志"
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: 补充信息
+      description: "截图、配置信息或其他有帮助的内容"
+    validations:
+      required: false

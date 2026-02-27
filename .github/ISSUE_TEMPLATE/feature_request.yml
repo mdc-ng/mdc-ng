@@ -1,0 +1,32 @@
+name: "✨ 功能建议"
+description: "提出新功能或改进建议"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你的建议！请描述你希望的功能以及使用场景。
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 功能描述
+      description: "你希望添加什么功能？"
+    validations:
+      required: true
+
+  - type: textarea
+    id: usecase
+    attributes:
+      label: 使用场景
+      description: "这个功能可以解决什么问题？你目前是怎么处理的？"
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: 可能的实现方案
+      description: "如果你有想法，可以描述一下期望的实现方式（可选）"
+    validations:
+      required: false
