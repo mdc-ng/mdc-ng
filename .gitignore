@@ -1,0 +1,4 @@
+*.tar.gz
+patched/mdc_ng_app
+patched/build/
+patched/original-yamls/
