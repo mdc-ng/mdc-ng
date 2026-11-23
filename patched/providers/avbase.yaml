@@ -1,0 +1,74 @@
+name: "AVbase"
+base_url: https://www.avbase.net
+
+detail:
+  rules:
+    - field: PublishNumber
+      xpath:
+        - //div[@role="tab"]/img[@alt="fanza"]/following-sibling::span/text()
+      add_to_context: true
+
+    - field: PublishNumberDVD
+      xpath:
+        - //div[@role="tab"]/img[@alt="fanza"]/following-sibling::span[. != (//div[@role="tab"]/img[@alt="fanza"]/following-sibling::span)[1]]/text()
+      add_to_context: true
+
+    - field: DMMCid
+      xpath: //div[@role="tab"]/img[@alt="fanza"]/following-sibling::span/text()
+    - field: Title
+      xpath: (//h1)[1]/text()
+    - field: OriginalTitle
+      xpath: (//h1)[1]/text()
+    - field: Actors
+      xpath: //h2[text()="出演者・メモ"]/ancestor::section[1]//a[starts-with(@href, "/talents/")]/span[last()]/text()
+      is_array: true
+    - field: Outline
+      xpath: //h2[text()="紹介文"]/following-sibling::p/text()
+    - field: OriginalActors
+      xpath: //h2[text()="出演者・メモ"]/ancestor::section[1]//a[starts-with(@href, "/talents/")]/span[last()]/text()
+      is_array: true
+    - field: Tags
+      xpath: //h2[text()="タグ・説明文"]/ancestor::section[1]//a[starts-with(@href, "/tags/")]/text()
+      is_array: true
+    - field: Studio
+      xpath: //dt[text()="メーカー"]/following-sibling::dd/a/text()
+    - field: Publisher
+      xpath: //dt[text()="レーベル"]/following-sibling::dd/a/text()
+    - field: Director
+      xpath: //dt[text()="監督"]/following-sibling::dd/a/text()
+    - field: Series
+      xpath: //dt[text()="シリーズ"]/following-sibling::dd/a/text()
+    - field: Cover
+      value:
+        - https://awsimgsrc.dmm.com/dig/mono/movie/{PublishNumberDVD}/{PublishNumberDVD}pl.jpg
+        - https://awsimgsrc.dmm.co.jp/pics_dig/digital/video/{PublishNumberDVD}/{PublishNumberDVD}pl.jpg
+        - https://awsimgsrc.dmm.com/dig/mono/movie/{PublishNumber}/{PublishNumber}pl.jpg
+        - https://awsimgsrc.dmm.co.jp/pics_dig/digital/video/{PublishNumber}/{PublishNumber}pl.jpg
+      min_size: 30000
+      xpath: //div[@role="tabpanel"]//a[contains(@class, "min-h-72")]//img/@src
+      is_url: true
+
+    - field: Poster
+      value:
+        - https://awsimgsrc.dmm.com/dig/mono/movie/{PublishNumberDVD}/{PublishNumberDVD}ps.jpg
+        - https://awsimgsrc.dmm.co.jp/pics_dig/digital/video/{PublishNumberDVD}/{PublishNumberDVD}ps.jpg
+        - https://awsimgsrc.dmm.com/dig/mono/movie/{PublishNumberDVD}/{PublishNumber}ps.jpg
+        - https://awsimgsrc.dmm.co.jp/pics_dig/digital/video/{PublishNumberDVD}/{PublishNumber}ps.jpg
+      min_size: 30000
+      is_url: true
+
+    - field: ExtraFanart
+      xpath: //div[contains(@class, "flex-none")]/a[contains(@rel, "noopener noreferrer")]/@href
+      is_array: true
+      is_url: true
+    - field: Release
+      xpath: //dt[text()="発売日"]/following-sibling::dd/a/text()
+      processes:
+        - type: date
+          format: "%Y/%m/%d"
+    - field: Runtime
+      xpath: //dt[text()="収録分数"]/following-sibling::dd/text()
+
+search:
+  url: "/works?q={number}"
+  detail_xpath: //div[contains(@class, "grow flex items-start")]/a[starts-with(@href, "/works/")]/@href

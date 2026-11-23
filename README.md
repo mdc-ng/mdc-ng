@@ -78,9 +78,13 @@ Telegram发布频道：https://t.me/mdc_ng
 
 覆盖各类视频类型的30+刮削源，支持优先级配置、防反爬、自动重试
 
+## 修复
+
+- **AVbase 刮削修复**：更新内置 AVbase 刮削规则以适配 avbase.net 当前页面结构（标题、演员、标签、厂商/系列、发售日、时长、封面/海报、剧照及搜索结果解析）。规则文件见 [patched/providers/avbase.yaml](patched/providers/avbase.yaml)。
+
 ## 部署
 
-镜像版本可以去本项目[dockerhub页面](https://hub.docker.com/r/mdcng/mdc)查看
+本仓库镜像 `ghcr.io/tonghongte/mdc-ng` 基于上游 [mdcng/mdc](https://hub.docker.com/r/mdcng/mdc)，仅替换内置刮削规则（见下方「修复」及 [CHANGELOG](CHANGELOG.md)），由 GitHub Actions 自动构建 amd64/arm64。
 
 ### docker-compose
 
@@ -89,7 +93,7 @@ Telegram发布频道：https://t.me/mdc_ng
 version: "2.1"
 services:
   mdc:
-    image: mdcng/mdc:latest
+    image: ghcr.io/tonghongte/mdc-ng:latest
     container_name: mdc
     environment:
       - PGID=1000 # 可选，设置组ID
